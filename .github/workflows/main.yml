@@ -27,7 +27,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Run UI Tests
-        run: ./gradlew clean test
+        run: ./gradlew test
 
       - name: List Report Files (Debug)
         run: ls -R target/web || echo "No report files found"
