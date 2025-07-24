@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Login to SauceDemo" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-23T15:16:22" hostname="LAPTOP-KNP6RUNT" time="6.085">
+<testsuite name="Login to SauceDemo" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-07-24T12:27:29" hostname="LAPTOP-KNP6RUNT" time="6.64">
   <properties/>
-  <testcase name="Login with valid credentials" classname="Login to SauceDemo" time="6.085"/>
+  <testcase name="Login with valid credentials" classname="Login to SauceDemo" time="3.421"/>
+  <testcase name="Login with invalid credentials" classname="Login to SauceDemo" time="3.219"/>
   <system-out><![CDATA[
 Scenario: Login with valid credentials         # src/test/resources/features/login.feature:3
-  Given User is on login page                  # step.LoginSteps.user_on_login_page()
-  When User enters valid username and password # step.LoginSteps.user_enters_valid_credentials()
-  Then User is redirected to the products page # step.LoginSteps.redirected_to_products()
+  Given User is on login page                  # step.LoginSteps.userIsOnLoginPage()
+  When User enters valid username and password # step.LoginSteps.userEntersValidCredentials()
+  Then User is redirected to the products page # step.LoginSteps.userIsRedirectedToProductsPage()
+
+Scenario: Login with invalid credentials        # src/test/resources/features/login.feature:8
+  Given User is on login page                   # step.LoginSteps.userIsOnLoginPage()
+  When User enters invalid username or password # step.LoginSteps.userEntersInvalidCredentials()
+  Then Error message is displayed               # step.LoginSteps.errorMessageIsDisplayed()
 ]]></system-out>
-  <system-err><![CDATA[Jul 23, 2025 10:16:23 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+  <system-err><![CDATA[Jul 24, 2025 7:27:31 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 138
-Jul 23, 2025 10:16:23 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 138.0.7204.158. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+Jul 24, 2025 7:27:31 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 138.0.7204.159. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+Jul 24, 2025 7:27:34 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 138
+Jul 24, 2025 7:27:34 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 138.0.7204.159. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
 </testsuite>
